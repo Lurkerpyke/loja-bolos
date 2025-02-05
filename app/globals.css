@@ -2,26 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 60 100% 98%;
+    --foreground: 340 50% 30%;
+
+    --card: 60 100% 98%;
+    --card-foreground: 340 50% 30%;
+
+    --popover: 60 100% 98%;
+    --popover-foreground: 340 50% 30%;
+
+    --primary: 340 80% 70%;
+    --primary-foreground: 60 100% 98%;
+
+    --secondary: 180 80% 80%;
+    --secondary-foreground: 340 50% 30%;
+
+    --muted: 340 20% 90%;
+    --muted-foreground: 340 30% 50%;
+
+    --accent: 60 80% 80%;
+    --accent-foreground: 340 50% 30%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 100% 98%;
+
+    --border: 340 30% 80%;
+    --input: 340 30% 80%;
+    --ring: 340 80% 70%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 340 50% 10%;
+    --foreground: 60 100% 98%;
+
+    --card: 340 50% 10%;
+    --card-foreground: 60 100% 98%;
+
+    --popover: 340 50% 10%;
+    --popover-foreground: 60 100% 98%;
+
+    --primary: 340 80% 70%;
+    --primary-foreground: 340 50% 10%;
+
+    --secondary: 180 80% 30%;
+    --secondary-foreground: 60 100% 98%;
+
+    --muted: 340 20% 30%;
+    --muted-foreground: 340 30% 70%;
+
+    --accent: 60 80% 30%;
+    --accent-foreground: 60 100% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 100% 98%;
+
+    --border: 340 30% 40%;
+    --input: 340 30% 40%;
+    --ring: 340 80% 70%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
+
